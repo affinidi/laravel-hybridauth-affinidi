@@ -17,10 +17,8 @@ Learn more about Hybridauth [here](https://hybridauth.github.io/)
 **Quick Links**
 1. [Installation & Usage](#setup--run-application-from-playground-folder)
 2. [Create Affinidi Login Configuration](#create-affinidi-login-configuration)
-3. Affinidi Login Integration with [Sample Laravel project](#setup--run-application-from-playground-folder)
-4. Affinidi Login Integration in [Fresh Laravel Project](#setup--run-application-from-playground-folder)
-5. Affinidi Login Integration in [Existing Laravel Project](#setup--run-application-from-playground-folder)
-
+3. Run [Sample Playground Project](#setup--run-application-from-playground-folder)
+4. Affinidi Login Integration in [Fresh Laravel Project](/docs/Fresh-Laravel-HybridAuth.md)
 
 ## Installation & Basic Usage
 
@@ -53,11 +51,7 @@ return [
     ?>
 ```
 
-# Authentication
-
-To authenticate users using an OAuth provider, you will need two routes: one for redirecting the user to the OAuth provider, and another for receiving the callback from the provider after authentication.
-
-The login controller example below demonstrate the implementation of both routes:
+3. Create `LoginRegisterController.php` file under `app\Http\Controllers`, which has actions to perform normal login, logout, affinidi login and its callback.
 
 ```
 <?php
@@ -144,7 +138,7 @@ affinidi login update-config --id <CONFIGURATION_ID> -f docs\loginConfig.json
 
 ## Setup & Run application from playground folder
 
-Open the directory `playground/example` in VS code or your favorite editor
+Open the directory `playground/example` in VS code or your favourite editor
 
  1. Install the dependencies by executing the below command in terminal
     ```
