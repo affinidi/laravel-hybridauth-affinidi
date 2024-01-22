@@ -15,7 +15,7 @@ This package extends HybridAuth to enable passwordless authentication with the A
 Learn more about Hybridauth [here](https://hybridauth.github.io/)
 
 **Quick Links**
-1. [Installation & Usage](#setup--run-application-from-playground-folder)
+1. [Installation & Usage](#installation--basic-usage)
 2. [Create Affinidi Login Configuration](#create-affinidi-login-configuration)
 3. Run [Sample Playground Project](#setup--run-application-from-playground-folder)
 4. Affinidi Login Integration in [Fresh Laravel Project](/docs/Fresh-Laravel-HybridAuth.md)
