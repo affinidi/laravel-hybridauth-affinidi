@@ -71,16 +71,16 @@ class AffinidiProvider extends OAuth2
         $userProfile = new User\Profile();
         $userProfile->identifier = $collection->get('did');
         $userProfile->email = $collection->get('email');
-        $userProfile->firstName = $collection->get('givenName');
-        $userProfile->lastName = $collection->get('familyName');
-        $userProfile->displayName = $collection->get('givenName') . ' ' . $collection->get('familyName');
+        $userProfile->firstName = $collection->get('givenName') ?: $collection->get('given_name');
+        $userProfile->lastName = $collection->get('familyName') ?: $collection->get('family_name');
+        $userProfile->displayName = $userProfile->firstName . ' ' . $userProfile->lastName;
         $userProfile->profileURL = $collection->get('picture');
         $userProfile->gender = $collection->get('gender');
-        $userProfile->phone = $collection->get('phoneNumber');
-        $userProfile->address = $collection->get('formatted');
-        $userProfile->country = $collection->get('country');
-        $userProfile->city = $collection->get('locality');
-        $userProfile->zip = $collection->get('postalCode');
+        $userProfile->phone = $collection->get('phoneNumber') ?: $collection->get('phone_number');
+        $userProfile->address = $collection->get('formatted') ?: $collection->filter('address')->get('formatted');
+        $userProfile->country = $collection->get('country') ?: $collection->filter('address')->get('country');
+        $userProfile->city = $collection->get('locality') ?: $collection->filter('address')->get('locality');
+        $userProfile->zip = $collection->get('postalCode') ?: $collection->filter('address')->get('postal_code');
 
         return $userProfile;
     }
