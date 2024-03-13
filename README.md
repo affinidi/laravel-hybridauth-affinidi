@@ -51,7 +51,7 @@ return [
     ?>
 ```
 
-3. Create `LoginRegisterController.php` file under `app\Http\Controllers`, which has actions to perform normal login, logout, affinidi login and its callback.
+3. Create `LoginRegisterController.php` file under `app\Http\Controllers`, which has actions to perform normal login, logout, affinidi login and its callback, reference can be found [here](playground\example\app\Http\Controllers\LoginRegisterController.php)
 
 ```
 <?php
@@ -123,6 +123,17 @@ class LoginRegisterController extends Controller
     }
 }
 
+```
+
+4. Open `routes\web.php` file and Add Web Routes which invokes the above login controller actions, reference can be found [here](playground\example\routes\web.php)
+
+5. Create file `login.blade.php` under `resources\views` for adding Affinidi Login button, reference can be found [here](playground\example\resources\views\login.blade.php)
+
+6. Create dashboard `dashboard.blade.php` under `resources\views` for displaying the logged in user info, reference can be found [here](playground\example\resources\views\dashboard.blade.php)
+
+7. Open `.env` file and update value of `APP_URL` to `http://localhost:8000`
+```
+APP_URL=http://localhost:8000
 ```
 
 ## Create Affinidi Login Configuration
